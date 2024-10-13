@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.flex-1::-webkit-scrollbar {
+  display: none;
+}
+
+
+@layer components {
+  .chat-bubble {
+    @apply relative;
+  }
+  .chat-bubble::before {
+    content: '';
+    @apply absolute bottom-0 w-2 h-2 transform rotate-45;
+  }
+  .chat-start .chat-bubble::before {
+    @apply -left-1 bg-gray-600;
+  }
+  .chat-end .chat-bubble::before {
+    @apply -right-1 bg-blue-500;
+  }
+}
