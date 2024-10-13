@@ -41,7 +41,7 @@ app.use("/api/message", messageRoute);
 // Serve the frontend in production
 if (process.env.NODE_ENV === "production") {
     const dirPath = path.resolve(); // Get the root directory of your project
-    app.use(express.static(path.join(dirPath, "frontend", "dist"))); // Serve static files from the correct directory
+    app.use(express.static(path.join(dirPath, "frontend", ""))); // Serve static files from the correct directory
 
     app.get("*", (req, res) => {
         res.sendFile(path.join(dirPath, "frontend", "dist", "index.html")); // Serve index.html for all routes
